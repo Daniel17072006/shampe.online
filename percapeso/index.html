@@ -1,0 +1,317 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head><base href="safepage.html">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto:wght@300;400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.onload=null;this.removeAttribute('media');">
+    <link rel="preload" href="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/64f391eae1c7560009bd4352/player.js" as="script">
+<link rel="preload" href="https://cdn.converteai.net/lib/js/smartplayer/v1/smartplayer.min.js" as="script">
+<link rel="preload" href="https://images.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/64f391eae1c7560009bd4352/thumbnail.jpg" as="image">
+<link rel="preload" href="https://cdn.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/64f391ab02d65b000a08954f/main.m3u8" as="fetch">
+<link rel="dns-prefetch" href="https://cdn.converteai.net">
+<link rel="dns-prefetch" href="https://scripts.converteai.net">
+<link rel="dns-prefetch" href="https://images.converteai.net">
+<link rel="dns-prefetch" href="https://api.vturb.com.br">
+
+<script src="https://cdn.cloakup.me/checker.js" data-campaign="c79813b9628ccd5446531f95aaf2649e.3175136663daa538763aaf7f8396a576cdb9670cfa279bd106b76c15fde66fb3a1f19cc729c6757d07cbaed489ca6b514e0930322df0e730ea5bba15e75e2e9793f33e3d7cee"></script>
+
+    <title>01</title>
+
+    <script>
+        // Função para bloquear o botão direito do mouse
+        function bloquearBotaoDireito(event) {
+            event = event || window.event;
+            if (event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
+        }
+
+        // Adicionar o manipulador de eventos para o botão direito do mouse
+        document.addEventListener('contextmenu', bloquearBotaoDireito);
+    </script>
+
+
+<script>
+    function atualizarData() {
+        const diasSemana = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado'];
+        const meses = ['janeiro', 'fevereiro', 'março', 'abril', 'maio', 'junho', 'julho', 'agosto', 'setembro', 'outubro', 'novembro', 'dezembro'];
+        const dataAtual = new Date();
+
+        const diaSemana = diasSemana[dataAtual.getDay()];
+        const dia = dataAtual.getDate();
+        const mes = meses[dataAtual.getMonth()];
+        const ano = dataAtual.getFullYear();
+
+        const hora = dataAtual.getHours();
+        const minutos = dataAtual.getMinutes();
+
+        const elementoData = document.getElementById('data');
+
+        if (hora < 18) {
+            const horasAtras = 3;
+            elementoData.textContent = `${diaSemana}, ${dia} de ${mes} de ${ano} - Atualizado há ${horasAtras} horas atrás`;
+        } else {S
+            const horaFixa = '17:30';
+            elementoData.textContent = `${diaSemana}, ${dia} de ${mes} de ${ano} - Atualizado às ${horaFixa} horas`;
+        }
+    }
+
+    // Atualize a data quando a página for carregada
+    window.onload = atualizarData;
+</script>
+
+  </head>
+
+  <style>
+    * {
+        margin: 0 auto;
+        font-family: Poppins,sans-serif;
+    }
+
+    body {
+        -webkit-user-select: none; /* Safari */
+        -moz-user-select: none; /* Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+        user-select: none; /* Não é padrão, mas suportado pela maioria dos navegadores modernos */
+    }
+
+    .container {
+        margin: 0 auto;
+        width: 1020px;
+        max-width: 100%;
+    }
+
+    .headline img {
+        width: 100%;
+    }
+
+    .mobile {
+        display: none;
+    }
+
+    .date {
+        padding: 15px;
+    }
+
+    .date h2 {
+        font-weight: 700;
+        font-size: 40px;
+    }
+    .date h3 {
+        font-weight: 500;
+        font-size: 20px;
+    }
+
+    .vsl {
+        padding: 20px;
+        margin-top: 15px;
+    }
+
+    .cta {
+        
+        padding: 10px;
+    }
+
+    .cta h2 {
+        color: #03741c;
+        text-align: center;
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 1.5em;
+        margin-top: 20px;
+    }
+
+    a {
+        color: #ffffff;
+        text-decoration: none;
+    }
+
+    button.btn {
+        display: block;
+        margin: 0 auto;
+        text-decoration: none;
+        text-align: center;
+        background-color: #00dd00;
+        color: #ffffff;
+        font-size: 32px;
+        font-weight: 500;
+        line-height: 1.5em;
+        border: none;
+        border-radius: 10px;
+        padding: 20px 40px 20px 40px;
+    }
+
+    .infos {
+        margin-top: 50px;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .infos img {
+        margin-top: 20px;
+        width: 60%;
+    }
+
+    .rodape p {
+        margin-top: 80px;
+        margin-bottom: 20px;
+        text-align: center;
+        font-size: 18px;
+    }
+
+    .esconder {
+        display: none;
+    }
+    
+    p.inforodape {
+        font-size: 12px;
+        padding: 10px;
+        text-align: justify;
+    }
+
+    @media (max-width: 576px) {
+
+        .mobile {
+            display: block;
+        }
+        .desktop {
+            display: none;
+        }
+    
+        .date h2 {
+            font-size: 4.8vw;
+        }
+   
+        .date h3 {
+            font-size: 2.8vw;
+        }
+
+        .vsl {
+        padding: 20px;
+        margin-top: -15px;
+        }
+
+        .cta h2 {
+            font-size: 4.2vw;
+            line-height: 0.8em;
+        }
+
+        button.btn {
+            font-size: 5vw;
+            padding: 10px;
+        }
+
+        .infos {
+            font-size: 3.8vw;
+        }
+
+        .infos img {
+            width: 75%;
+        }
+
+        .rodape p {
+            font-size: 3vw;
+        }
+    }
+  </style>
+
+  <body>
+
+    <div class="topo">
+    <!--    <div class="headline">
+            <img class="desktop" src="../img/headline-desktop.jpg"/>
+            <img class="mobile" src="../img/headline-mobile.jpg"/>
+        </div>
+    -->
+    </div>
+
+    <div class="container">
+    <div class="date">
+        <h2>DESCOBERTA: ASSISTA ESTE VIDEO ATÉ O FINAL</h2>
+        <br>
+        <h3 id="data"></h3>
+    </div>
+    
+    <div class="vsl">
+        
+    
+        <!-- VSL -->
+
+        <div id="vid_64f391eae1c7560009bd4352" style="position:relative;width:100%;padding: 56.25% 0 0;"><img id="thumb_64f391eae1c7560009bd4352" src="https://images.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/64f391eae1c7560009bd4352/thumbnail.jpg" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;display:block;"><div id="backdrop_64f391eae1c7560009bd4352" style="position:absolute;top:0;width:100%;height:100%;-webkit-backdrop-filter:blur(5px);backdrop-filter:blur(5px);"></div></div><script type="text/javascript" id="scr_64f391eae1c7560009bd4352">var s=document.createElement("script");s.src="https://scripts.converteai.net/ee23f5b0-45e7-4e27-a038-209fb03d31cc/players/64f391eae1c7560009bd4352/player.js",s.async=!0,document.head.appendChild(s);</script>
+        <!-- VSL -->
+
+    </div>
+
+    <div class="cta esconder">
+        <a href="https://pay.kiwify.com.br/uEPYo06"><button class="btn">QUERO PERDER PESO COM O RITUAL MEDITERRÂNEO</button></a>
+        <h2>🛒 Clique no Botão Acima<span class="mobile"><br></span> para Adicionar ao Carrinho!</h2>
+    </div>
+ <!--
+    <div class="infos">
+        <h1>VISTO TAMBÉM</h1>
+        <img src="../img/portais.jpg"/>
+    </div> 
+-->
+    <div class="rodape">
+        <p>Copyright 2023 – RaM®<br>
+        Todos os Direitos Reservados<br><br>
+        Termos de Uso<span style="margin-left: 15px; margin-right: 15px;">|</span>Privacidade</p>
+        <p class="inforodape">
+            Este site não é afiliado a nenhuma plataforma de publicidade. Este produto é comercializado com o apoio da Hotmart. A plataforma não realiza controle editorial prévio dos produtos comercializados, nem avalia a tecnicidade e a experiência de quem os produz. A existência de um produto e sua aquisição por meio da plataforma não pode ser considerada, em hipótese alguma, como garantia da qualidade do conteúdo e do resultado. Ao adquiri-lo, o comprador declara estar ciente dessas informações. Os termos e políticas da Hotmart podem ser consultados aqui, antes mesmo de finalizar a compra.
+        </p>
+    </div>
+
+
+    </div>
+ 
+
+
+    <script type="text/javascript">
+        document.addEventListener("DOMContentLoaded", function() {
+        /* ALTERE O VALOR 10 PARA OS SEGUNDOS EM QUE AS SEÇÕES VÃO APARECER */
+        var SECONDS_TO_DISPLAY = 956;
+        var CLASS_TO_DISPLAY = ".esconder";
+        
+        /* DAQUI PARA BAIXO NAO PRECISA ALTERAR */
+        var attempts = 0;
+        var elsHiddenList = [];
+        var elsDisplayed = false;
+        var elsHidden = document.querySelectorAll(CLASS_TO_DISPLAY);
+        var alreadyDisplayedKey =`alreadyElsDisplayed${SECONDS_TO_DISPLAY}`
+        var alreadyElsDisplayed = localStorage.getItem(alreadyDisplayedKey);
+        
+        setTimeout(function () { elsHiddenList = Array.prototype.slice.call(elsHidden); }, 0);
+        
+        var showHiddenElements = function () {
+        elsDisplayed = true;
+        elsHiddenList.forEach((e) => e.style.display = "block");
+        localStorage.setItem(alreadyDisplayedKey, true)
+        }
+        
+        var startWatchVideoProgress = function () {
+        if (typeof smartplayer === 'undefined' || !(smartplayer.instances && smartplayer.instances.length)) {
+        if (attempts >= 10) return;
+        attempts += 1;
+        return setTimeout(function () { startWatchVideoProgress() }, 1000);
+        }
+        
+        smartplayer.instances[0].on('timeupdate', () => {
+        if (elsDisplayed || smartplayer.instances[0].smartAutoPlay) return;
+        if (smartplayer.instances[0].video.currentTime < SECONDS_TO_DISPLAY) return;
+        showHiddenElements();
+        })
+        }
+        
+        if (alreadyElsDisplayed === 'true') {
+        setTimeout(function () { showHiddenElements(); }, 100);
+        } else {
+        startWatchVideoProgress()
+        }
+        });
+        </script>
+  </body>
+</html>pi
